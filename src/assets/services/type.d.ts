@@ -27,7 +27,43 @@ type ResponseMovie = {
     vote_average: number
     vote_count: number
   }
-
+  interface DetailMovie extends Movie {
+    belongs_to_collection: any
+    budget: number
+    genres: Genre[]
+    homepage: string
+    imdb_id: string
+    production_companies: ProductionCompany[]
+    production_countries: ProductionCountry[]
+    revenue: number
+    runtime: number
+    spoken_languages: SpokenLanguage[]
+    status: string
+    tagline: string
+   }
+  
+  type Genre = {
+    id: number
+    name: string
+  }
+  
+  type ProductionCompany = {
+    id: number
+    logo_path?: string
+    name: string
+    origin_country: string
+  }
+  
+  type ProductionCountry = {
+    iso_3166_1: string
+    name: string
+  }
+  
+  type SpokenLanguage = {
+    english_name: string
+    iso_639_1: string
+    name: string
+  }
 
   type ResponseTv = {
     page: number
@@ -51,6 +87,8 @@ type ResponseMovie = {
     vote_average: number
     vote_count: number
   }
+
+  export type { DetailMovie,ResponseMovie, Dates, Movie, ResponseTv, Tv, ResponseTopRate}
   
   type ResponseTopRate = {
     page: number
@@ -127,4 +165,3 @@ type ResponseMovie = {
     iso_639_1: string
     name: string
   }
-  

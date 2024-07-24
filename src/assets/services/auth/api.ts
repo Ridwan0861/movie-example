@@ -1,6 +1,6 @@
 import { AuthPayLoad, AuthResponse } from './type';
 
-import { API } from "..";
+import { API } from "../index";
 
 const PostLogin = async (payload: AuthPayLoad) => {
 	try {

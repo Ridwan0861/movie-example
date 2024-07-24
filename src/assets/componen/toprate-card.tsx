@@ -13,7 +13,7 @@ const TopRateCard = (props: Props) => {
     >
       <img
         className="rounded-2xl shadow-lg"
-        src={`https://image.tmdb.org/t/p/original/${poster_path}`}
+        src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
       ></img>
       <label>{title}</label>
       <p>{release_date}</p>

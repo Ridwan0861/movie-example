@@ -13,7 +13,7 @@ const TvCard = (props: Props) => {
     >
       <img
         className="rounded-2xl shadow-lg"
-        src={`https://image.tmdb.org/t/p/original/${poster_path}`}
+        src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
       ></img>
       <label>{name}</label>
       <label className="text-slate-600">{first_air_date}</label>

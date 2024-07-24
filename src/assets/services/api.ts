@@ -1,3 +1,5 @@
+import { DetailMovie, ResponseMovie } from "./type";
+
 import { API } from "."
 
 const getNowPlaying = async (page: string) => {
@@ -11,9 +13,8 @@ const getNowPlaying = async (page: string) => {
         console.log(error);
     }
 };
-    export { getNowPlaying };
 
-    const getOnTv = async () => {
+    const getOnTv = async (page: string) => {
         try {
         const response = await API.get("tv/on_the_air?language=en-US&page=1");
             
@@ -26,7 +27,7 @@ const getNowPlaying = async (page: string) => {
     };
         export { getOnTv };
 
-    const getTopRate = async () => {
+    const getTopRate = async (page: string) => {
         try {
         const response = await API.get("movie/top_rated?language=en-US&page=1");
             
@@ -38,3 +39,17 @@ const getNowPlaying = async (page: string) => {
         }
     };
         export { getTopRate };
+
+
+        const getMovieId = async (id: string) => {
+            try {
+            const response = await API.get(`/movie/${id}`);
+                
+            console.log(response);
+        
+            return response.data as DetailMovie;
+            } catch (error) {
+                console.log(error);
+            }
+        };
+            export { getNowPlaying, getMovieId };

@@ -1,4 +1,5 @@
 import LazyLoad from "react-lazyload";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   title: string;
@@ -14,14 +15,11 @@ const MovieCard = (props: Props) => {
 
   return (
     <div
+      onClick={handleNavigate}
       className={`flex flex-col text-center font-semibold rounded-2xl shadow-lg ${size}`}
     >
       <LazyLoad height={300} offset={100} once>
         <picture>
-          <source
-            srcSet={`https://image.tmdb.org/t/p/w500/${poster_path}`}
-            type="image"
-          />
           <img className="rounded-2xl shadow-lg" src={imageUrl} alt={title} />
         </picture>
       </LazyLoad>

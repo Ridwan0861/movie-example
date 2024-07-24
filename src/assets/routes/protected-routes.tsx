@@ -1,17 +1,27 @@
-import React from 'react'
-import { useLocation } from 'react-router-dom'
+import { Navigate, Outlet, useLocation } from "react-router-dom";
 
 const ProtectedRoutes = () => {
-  return (
-    const {pathname} = useLocation();
+  const { pathname } = useLocation();
 
-    const token = ""
+  const token = localStorage.getItem("token");
+  const tokenProtected = ["/", "/detail/:id", "/movie", "/tv-show"];
+  const publicProtected = ["/login"];
 
-    const tokenProtected = ["/", "/detail/:id", "/movie", "/tv-show"];
-    console.log(pathname);
+  console.log(pathname);
 
-    if (tokenProtected)
-  )
-}
+  if (tokenProtected.includes(pathname)) {
+    if (!token) {
+      console.log("test");
 
-export default protected-routes
+      return <Navigate to={"/login"} />;
+    }
+  }
+  if (publicProtected.includes(pathname)) {
+    if (token) {
+      return <Navigate to={"/"} />;
+    }
+  }
+  return <Outlet />;
+};
+
+export default ProtectedRoutes;

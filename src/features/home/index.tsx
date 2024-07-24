@@ -1,3 +1,4 @@
+import { Movie, ResponseMovie } from "../../assets/services/type";
 import { useEffect, useState } from "react";
 
 import MovieCard from "../../assets/componen/movie-card";
@@ -39,8 +40,8 @@ const Home = () => {
   };
 
   const toDetailMovie = (id: number) => {
-    navigate(`detail/$(id)`)
-  }
+    navigate(`detail/${id}`);
+  };
 
   return (
     <div className="flex flex-col mt-7">
@@ -54,7 +55,7 @@ const Home = () => {
               title={item.title}
               release_date={item.release_date}
               size="w-40"
-              handleNavigate={()}
+              handleNavigate={() => toDetailMovie(item.id)}
             />
           ))}
         </div>
@@ -62,7 +63,7 @@ const Home = () => {
         <div>Loading...</div>
       )}
 
-      <div className="flex flex-row justify-around mt-5 font-semibold py-3 text-opacity-25">
+      <div className="flex flex-row justify-between mt-5">
         <button
           onClick={handlingPage}
           className="bg-green-600 p-2 rounded-sm"
