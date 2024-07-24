@@ -5,8 +5,6 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-scroll";
-import React from "react";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {

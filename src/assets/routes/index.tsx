@@ -8,9 +8,6 @@ import { createBrowserRouter } from "react-router-dom";
 
 // import Movie from "../movie";
 
-
-
-
 export const router = createBrowserRouter([
   {
     element: <ProtectedRoutes />,
